@@ -1,0 +1,50 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  text-align: center;
+  margin: 3%;
+}
+
+.allMsgContainer{
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75vh;
+  gap: 20px;
+  margin-bottom: 20px;
+
+}
+
+.msgContainer{
+  background-color: rgb(240, 240, 240);
+  width: 60%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.titleDateContainer{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.titleDateContainer h3{
+  padding-bottom: 5px;
+}
+
+.messageForm{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 60%;
+  background-color: wheat;
+  margin: 0 auto;
+}
+
+textarea{
+  width: 100%;
+}
