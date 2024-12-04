@@ -1,50 +1,121 @@
 *{
   margin: 0px;
   padding: 0px;
+  font-family: 'Patrick Hand', 'Caveat', cursive;
+  letter-spacing: 0.05em; 
 }
 
+/* ! Whole page container */
+.fullPageContainer{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+/* ! Top page container */
+.pageContainer{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  /* overflow: hidden; */
+}
+
+/* ! Left side lyric container */
+.lyricsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.lyricsContainer p{
+  font-size: 18px;
+}
+
+/* ! Right side Container  */
 header{
   text-align: center;
   margin: 3%;
+  font-size: 18px;
 }
 
+h1{
+  font-size: 40px;
+  color: rgb(121, 39, 39);
+  text-shadow: 1px 1px 0 #d3b88c; 
+}
+
+.titleContainer{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+#tractorIcon{
+  font-size: 50px;
+  color: rgb(63, 63, 63);
+}
+
+/* !Right side msg container  */
 .allMsgContainer{
   /* background-color: blue; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70vh;
+  height: 60vh;
   gap: 20px;
   margin-bottom: 20px;
   overflow-y: auto;
-
 }
 
 .msgContainer{
-  background-color: rgb(240, 240, 240);
-  width: 60%;
+  border: 2px solid black;
+  background-color: rgb(250, 250, 250);
+  width: 70%;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msgContainer p {
+  word-break: break-word; /* Ensure words break */
+}
+
+
+.farmerPfp{
+  width: 50px;
+  border-radius: 500px;
+}
+
+.pfpNameContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .titleDateContainer{
   display: flex;
-  gap: 10px;
-  align-items: center;
+  flex-direction: column;
 }
 
 .titleDateContainer h3{
+  font-size: 20px;
   padding-bottom: 5px;
 }
 
 .messageForm{
   display: flex;
   gap: 5px;
-  justify-content: center;
-  width: 60%;
-  background-color: wheat;
+  align-items: center;
+  width: 70%;
+  /* background-color: wheat; */
   margin: 0 auto;
-  /* margin-bottom: 3%; */
 }
 
 textarea{
@@ -52,4 +123,24 @@ textarea{
   resize: none;
   font-size: 20px;
   padding: 10px;
+  border-radius: 10px;
+  height: 50px;
+  border-width: 2px;
+}
+
+#sendIcon{
+  font-size: 50px;
+  cursor: pointer;
+  color:rgb(121, 39, 39);
+}
+
+/* !Footer */
+footer{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: rgb(121, 39, 39);
+  padding: 10px;
+  font-size: 20px;
 }
