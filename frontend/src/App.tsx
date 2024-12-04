@@ -157,7 +157,9 @@ function App() {
       </div>
       <footer>
         @ 2024 Pauleena Phan. All rights reserved
-        <FaGithub />
+        <a href="https://github.com/pauleenaphan/Old-Mac-s-Chat" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </a>
       </footer>
     </div>
   )
