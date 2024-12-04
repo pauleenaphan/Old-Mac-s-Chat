@@ -13,9 +13,10 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75vh;
+  height: 70vh;
   gap: 20px;
   margin-bottom: 20px;
+  overflow-y: auto;
 
 }
 
@@ -43,8 +44,12 @@ header{
   width: 60%;
   background-color: wheat;
   margin: 0 auto;
+  /* margin-bottom: 3%; */
 }
 
 textarea{
   width: 100%;
+  resize: none;
+  font-size: 20px;
+  padding: 10px;
 }

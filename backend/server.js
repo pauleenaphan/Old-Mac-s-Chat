@@ -1,4 +1,6 @@
 const http = require('http');
+const express = require('express');
+const cors = require('cors');
 const { Server } = require('socket.io');
 
 require('dotenv').config();
@@ -6,16 +8,46 @@ const mongoose = require("mongoose");
 const mongoDB_URL = process.env.MONGODB_URL;
 const PORT = 3001;
 
-const server = http.createServer(); // Simple HTTP server
-const io = new Server(server); // Attach Socket.IO to the server
+const { getTodaysDate } = require("../backend/utils/helper");
+const Message = require("./mongodb/messageModel"); // msg model
+const messageRoutes = require('./mongodb/messageController'); //msg route
 
+const app = express();
+const server = http.createServer(app); 
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Allow only your frontend to connect
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
+
+app.use(express.json());
+app.use(messageRoutes);
+
+const io = new Server(server, {
+    cors: {
+        origin: 'http://localhost:5173',  // Allow only your React frontend
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type']
+    }
+});
+
+// Socket.io connection
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    // Handle custom events
-    socket.on('message', (msg) => {
+    // Handle custom and incoming events
+    socket.on('message', async (msg) => {
         console.log('Message received:', msg);
-        io.emit('message', msg); // Broadcast the message to all clients
+
+        // Saves msg to mongodb
+        const newMsg = new Message({
+            content: msg,
+            date: getTodaysDate()
+        })
+        const savedMsg = await newMsg.save();
+
+        io.emit('message', { content: savedMsg.content, date: savedMsg.date });
     });
 
     socket.on('disconnect', () => {
