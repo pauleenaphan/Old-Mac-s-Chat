@@ -21,7 +21,7 @@ function App() {
     // Fetch all messages from MongoDB using the new endpoint
     const fetchMessages = async () => {
       try {
-          const response = await fetch('https://acoustic-lopsided-larch.glitch.me');
+          const response = await fetch('https://acoustic-lopsided-larch.glitch.me/messages');
           const data = await response.json();
           setMessages(data); // Store the fetched messages in state
       } catch (error) {
