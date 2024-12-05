@@ -16,7 +16,7 @@ const app = express();
 const server = http.createServer(app); 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow only your frontend to connect
+    origin: 'https://oldmacschat.netlify.app', // Allow only your frontend to connect
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
@@ -26,7 +26,7 @@ app.use(messageRoutes);
 
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:5173',  // Allow only your React frontend
+        origin: 'https://oldmacschat.netlify.app',  // Allow only your React frontend
         methods: ['GET', 'POST'],
         allowedHeaders: ['Content-Type']
     }
