@@ -6,9 +6,9 @@ const { Server } = require('socket.io');
 require('dotenv').config();
 const mongoose = require("mongoose");
 const mongoDB_URL = process.env.MONGODB_URL;
-const PORT = 3001;
+const PORT = 3000;
 
-const { getTodaysDate } = require("../backend/utils/helper");
+const { getTodaysDate } = require("./utils/helper");
 const Message = require("./mongodb/messageModel"); // msg model
 const messageRoutes = require('./mongodb/messageController'); //msg route
 
