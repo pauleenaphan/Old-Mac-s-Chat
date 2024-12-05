@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 import farmerPfp from "./assets/farmerpfp.png";
 
-const SOCKET_URL = 'https://oldmacsfarm.glitch.me';
+const SOCKET_URL = 'https://acoustic-lopsided-larch.glitch.me';
 
 // One page so we don't need routing
 function App() {
@@ -21,7 +21,7 @@ function App() {
     // Fetch all messages from MongoDB using the new endpoint
     const fetchMessages = async () => {
       try {
-          const response = await fetch('https://oldmacsfarm.glitch.me/messages');
+          const response = await fetch('https://acoustic-lopsided-larch.glitch.me');
           const data = await response.json();
           setMessages(data); // Store the fetched messages in state
       } catch (error) {
